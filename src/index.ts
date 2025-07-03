@@ -19,7 +19,7 @@ const processAllCustomersWithPortfolio = async () => {
       await getAllCustomersWithClientId({
         limit: 390,
         lastEvaluatedKey: lastEvaluatedKey,
-        clientId: "5seu5ehrje7bgs79rcn6gau2p4",
+        clientId: "2pt1e1ckn596fqauq9mhqkppf2",
       });
 
     if (customers.length === 0) {
@@ -43,13 +43,10 @@ const processAllCustomersWithPortfolio = async () => {
             `Customer ${customer.customerId} has clientId ${customer.clientId} and updated portfolio ${portfolio.id}`
           );
           totalProcessed++;
-        } else {
-          totalNotProcessed++;
         }
-
-        totalProcessed++;
       } catch (error) {
         console.error(`Error processing customer ${customer.customerId}`);
+        totalNotProcessed++;
       }
     }
 
